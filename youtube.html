@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+
+<head>
+    <title>youtube.table format</title>
+    <!-- internal styling -->
+    <style>
+        .border {
+            border-style: solid;
+        }
+
+        .box {
+            border-style: solid;
+            background-color: rgb(131, 131, 131);
+
+        }
+
+        .head {
+            background-color: rgb(61, 252, 119);
+            height: 45px;
+        }
+        body {
+            padding: 40px;
+            background-color: black;
+            margin-left: 130px;
+        }
+       
+    </style>
+</head>
+<!-- body -->
+
+<body>
+    <!-- table -->
+    <table class="border">
+        <!-- table head -->
+        <tr>
+            <th class="head">About</th>
+            <th class="head">Skill</th>
+            <th class="head">Personal Details</th>
+            <th class="head">Academic</th>
+            <th class="head">Vision</th>
+        </tr>
+        <!-- table data, video link -->
+        <tr>
+            <td class="box" colspan="4" rowspan="4"><video src="../images & audio/sample_960x540.mp4" width="800px"
+                    height="450px" controls></video></td>
+            <td class="box"><video src="../images & audio/sample_960x540.mp4" controls
+                    style="height: 137px; width: 320px ;"></video></td>
+        </tr>
+
+        <td class="box"><video src="../images & audio/sample_960x540.mp4" width="320px" height="137px" controls></video>
+        </td>
+        </tr>
+        <tr>
+
+            <td class="box"><video src="../images & audio/sample_960x540.mp4" width="320px" height="137px"
+                    controls></video></td>
+        </tr>
+        <!-- table footer -->
+        <tfoot>
+            <tr style="background-color: rgb(1, 164, 110);">
+                <td colspan="2">Follow Us :</td>
+                <td>Facebook</td>
+                <td>Linkedin</td>
+                <td>Twitter</td>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+
+</html>
