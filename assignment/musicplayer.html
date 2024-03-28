@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-image: url(https://global.discourse-cdn.com/brave/original/3X/0/3/03d6c457e419631dc4d4e3015d028aa657bd41e0.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .container {
+            height: 50vh;
+            width: 75vw;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(45deg, #66ff00, #ff0000, #0000ff, #ff0080);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            margin-left: 250px;
+            margin-top: 250px;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .controls input[type="range"] {
+            width: 100%;
+        }
+
+        #songNameDisplay {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .songImage {
+            width: 75vw;
+            height: 25vh;
+            margin-top: 20px;
+            display: none;
+            border-radius: 20px;
+
+     
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <audio id="audioPlayer" controls>
+            <source src="./images & audio/Pehle Bhi Main Tumse Mila Hu_64(PagalWorld.com.cm).mp3" type="audio/mpeg">
+            <source src="./images & audio/Koi Si_64(PagalWorld.com.cm).mp3" type="audio/mpeg">
+            <source src="./images & audio/O Bedardeya_64(PagalWorld.com.cm).mp3" type="audio/mpeg">
+            <source src="./images & audio/Dope Shope_64(PagalWorld.com.cm).mp3" type="audio/mpeg">
+            <source src="./images & audio/Satranga(PaglaSongs).mp3" type="audio/mpeg">
+            <!-- Add more <source> elements for additional songs -->
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn">Play</button>
+            <button id="playNextBtn">Next Song</button>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" style="margin-top: 20px; ">
+        </div>
+        <div id="songNameDisplay"></div>
+        <img id="songImage1" class="songImage" src="https://i.ytimg.com/vi/IjJapzmqTpY/maxresdefault.jpg" height="600px" width="900px">
+        <img id="songImage2" class="songImage" src="https://i.ytimg.com/vi/0RsLNLi4GX0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCXJkk_bsuizfvn6tHeRRJa93uGRQ" height="100px" width="100px">
+        <img id="songImage3" class="songImage" src=https://i.ytimg.com/vi/npwn6KVMtFI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAYYYUTlZmgfyNUiO6ToNS1jCo-mw" height="100px" width="100px">
+        <img id="songImage4" class="songImage" src="https://i.ytimg.com/vi/DCehYTxy6lU/mqdefault.jpg" height="100px" width="100px">
+        <img id="songImage5" class="songImage" src="https://miro.medium.com/v2/resize:fit:1400/1*veCaQGbbO4zc4eWQJ4UHbQ.jpeg" height="100px" width="100px">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audioPlayer = document.getElementById("audioPlayer");
+            const playPauseBtn = document.getElementById("playPauseBtn");
+            const playNextBtn = document.getElementById("playNextBtn");
+            const volumeControl = document.getElementById("volumeControl");
+            const songNameDisplay = document.getElementById("songNameDisplay");
+            const songImages = document.getElementsByClassName("songImage");
+            let currentSongIndex = 0;
+
+            playPauseBtn.addEventListener("click", function () {
+                if (audioPlayer.paused) {
+                    audioPlayer.play();
+                    playPauseBtn.textContent = "Pause";
+                } else {
+                    audioPlayer.pause();
+                    playPauseBtn.textContent = "Play";
+                }
+            });
+
+            playNextBtn.addEventListener("click", function () {
+                currentSongIndex = (currentSongIndex + 1) % audioPlayer.children.length;
+                audioPlayer.src = audioPlayer.children[currentSongIndex].src;
+                audioPlayer.play();
+            });
+
+            volumeControl.addEventListener("input", function () {
+                audioPlayer.volume = volumeControl.value;
+            });
+
+            audioPlayer.addEventListener("play", function () {
+                songNameDisplay.textContent = "Now Playing: " + audioPlayer.currentSrc.split("/").pop();
+                for (let i = 0; i < songImages.length; i++) {
+                    songImages[i].style.display = "none";
+                    // Hide all images
+                }
+                songImages[currentSongIndex].style.display = "block";
+                // Show the image corresponding to the current song
+            });
+
+            audioPlayer.addEventListener("pause", function () {
+                songNameDisplay.textContent = "";
+                for (let i = 0; i < songImages.length; i++) {
+                    songImages[i].style.display = "none";
+                    // Hide all images
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

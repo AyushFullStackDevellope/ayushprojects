@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EP_Table</title>
+    <!-- internal styling -->
+    <style>
+        button {
+            margin-top: 100px;
+            margin-left: 640px;
+            height: 5vh;
+            width: 10vw;
+            background-color: rgb(128, 128, 205);
+            color: aliceblue;
+        }
+
+        #input {
+            margin-left: 400px;
+            height: 30px;
+            width: 300px;
+            background-color: rgb(145, 145, 145);
+            color: azure;
+            margin-top: 5px;
+            font-size: large;
+            cursor: cell;
+        }
+
+        body {
+            background-image: url(https://news.cnrs.fr/sites/default/files/styles/visuel_principal/public/assets/images/multiplications_pretexte.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 85vh;
+            width: 100vw;
+        }
+
+        #display {
+            height: 30vh;
+            width: 40vw;
+            color: black;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin-top: 100px;
+            margin-left: 400px;
+            color: azure;
+            font-size: larger;
+            padding: 20px;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function iterative() {
+            let table = Number(prompt("Select a number for the multiplication table"));
+            let result = "";
+            let x = 1;
+            while (x <= 10) {
+                result += `${table} × ${x} = ${table * x}<br>`;
+                x++;
+            }
+            document.getElementById("display").innerHTML = result;
+        }
+    </script>
+</head>
+<!-- body -->
+
+<body>
+    <!-- input button display -->
+    <div id="display"></div>
+    <br>
+    <button onclick="iterative()">Try Now !!</button>
+</body>
+
+</html>
