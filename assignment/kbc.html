@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>KBC</title>
+    <style>
+        .main-container {
+            height: 100%;
+            width: 100%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* start button */
+        .start-button {
+            height: 65px;
+            width: 170px;
+            background-color: #c7b53c;
+            font-size: 20px;
+            color: white;
+            border-radius: 30%;
+            margin-left: 600px;
+            margin-top: 300px;
+        }
+
+        /* display */
+        .display {
+            width: 90%;
+            height: 200px;
+            background-color: #d28542;
+            margin-left: 5%;
+            border-radius: 50px;
+            /* margin-top: 100px; */
+            border-style: solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-display {
+            font-size: 50px;
+            color: white;
+
+        }
+
+        .button {
+            height: 70px;
+            width: 400px;
+            border-radius: 250px;
+            margin: 10px;
+            margin-left: 15%;
+            margin-top: 40px;
+            background-color: #0b81b0;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+
+        }
+    </style>
+    <script>
+        let xyz = new Audio("/Users/enjoy_25_ep/Downloads/kbc.mp3");
+        let questionNumber = 0;
+
+        function questionOne() {
+            let xyz = new Audio("/Users/enjoy_25_ep/Downloads/kbc.mp3");
+            document.getElementById("text-display").innerHTML =
+                "1.  मूल रामायण की रचना किसने की थी?";
+            document.getElementById("answer-one").innerHTML = "A.ऋषि वाल्मिकी";
+            document.getElementById("answer-two").innerHTML = "B. तुलसी दास";
+            document.getElementById("answer-three").innerHTML = "C. संत एकनाथ";
+            document.getElementById("answer-four").innerHTML = "D. अनहिनंदा";
+            xyz.play();
+        }
+
+        function questionTwo() {
+            document.getElementById("text-display").innerHTML =
+                "2.  लक्ष्मण को किसका अवतार माना जाता है?";
+            document.getElementById("answer-one").innerHTML = "A.भगवान विष्णु";
+            document.getElementById("answer-two").innerHTML = "B. भगवान शिव";
+            document.getElementById("answer-three").innerHTML = "C. भगवान ब्रह्मा";
+            document.getElementById("answer-four").innerHTML = "D. शेषनाग";
+            xyz.play();
+        }
+
+        function questionThree() {
+            document.getElementById("text-display").innerHTML =
+                "3.  उस जंगल का क्या नाम था जहाँ भगवान राम, लक्ष्मण और देवी सीता वनवास के दौरान रुके थे?";
+            document.getElementById("answer-one").innerHTML = "A. अरन्या";
+            document.getElementById("answer-two").innerHTML = "B. अरण्यक";
+            document.getElementById("answer-three").innerHTML = "C. दंडकारण्य";
+            document.getElementById("answer-four").innerHTML = "D. करण्या";
+            xyz.play();
+        }
+
+        function questionFour() {
+            document.getElementById("text-display").innerHTML =
+                "4.  रावण निम्नलिखित में से किस भगवान का भक्त था?";
+            document.getElementById("answer-one").innerHTML = "A. विष्णु";
+            document.getElementById("answer-two").innerHTML = "B. ब्रह्मा";
+            document.getElementById("answer-three").innerHTML = "C. शिव";
+            document.getElementById("answer-four").innerHTML = "D. इस में से कोई नहीं";
+            xyz.play();
+        }
+        // five
+        function questionFive() {
+            document.getElementById("text-display").innerHTML =
+                "5.   भगवान राम के पिता का नाम क्या था?";
+            document.getElementById("answer-one").innerHTML = "A. शालिशुका";
+            document.getElementById("answer-two").innerHTML = "B. नहपाना ";
+            document.getElementById("answer-three").innerHTML = "C. राजाधिराज";
+            document.getElementById("answer-four").innerHTML = "D. दशरथ";
+            xyz.play();
+        }
+        // six
+        function questionSix() {
+            document.getElementById("text-display").innerHTML =
+                "6.  भावार्थ रामायण किसने लिखी है?";
+            document.getElementById("answer-one").innerHTML = "A. माधव कंडाली";
+            document.getElementById("answer-two").innerHTML = "B.एकनाथ";
+            document.getElementById("answer-three").innerHTML = "C. कृतिबास";
+            document.getElementById("answer-four").innerHTML = "D. बुद्ध रेड्डी";
+            xyz.play();
+        }
+        // seven
+        function questionSeven() {
+            document.getElementById("text-display").innerHTML =
+                "7.   निम्नलिखित में से कौन रामचरितमानस के भाग हैं?";
+            document.getElementById("answer-one").innerHTML = "A. बाल कांडा";
+            document.getElementById("answer-two").innerHTML = "B. अरण्य काण्ड";
+            document.getElementById("answer-three").innerHTML = "C. किष्किन्धा काण्ड";
+            document.getElementById("answer-four").innerHTML = "D. उपरोक्त सभी सही हैं";
+            xyz.play();
+        }
+        // eight
+        function questionEight() {
+            document.getElementById("text-display").innerHTML =
+                "8.   उस धनुष का क्या नाम था जिसका उपयोग भगवान राम ने देवी सीता स्वयंवर में उनसे विवाह करने के लिए किया था?";
+            document.getElementById("answer-one").innerHTML = "A.पिनाका";
+            document.getElementById("answer-two").innerHTML = "B. पिंडका";
+            document.getElementById("answer-three").innerHTML = "C. आनंदका";
+            document.getElementById("answer-four").innerHTML = "D. रूलापाण्ड";
+            xyz.play();
+        }
+        // nine
+        function questionNine() {
+            document.getElementById("text-display").innerHTML =
+                "9.   निम्नलिखित में से कौन सा/से रामायण का वह संस्करण है जो भारत के बाहर उभरा है?";
+            document.getElementById("answer-one").innerHTML = "A. कंबोडिया - रीमकर";
+            document.getElementById("answer-two").innerHTML = "B. थाईलैंड - रामकियेन";
+            document.getElementById("answer-three").innerHTML = "C. बर्मा (म्यांमार) - यम ज़टडॉ";
+            document.getElementById("answer-four").innerHTML = "D. उपरोक्त सभी सही हैं";
+            xyz.play();
+        }
+        // ten
+        function questionTen() {
+            document.getElementById("text-display").innerHTML =
+                "10.  भगवान राम ने राजा के रूप में किस शहर पर शासन किया?";
+            document.getElementById("answer-one").innerHTML = "A. अयोध्या ";
+            document.getElementById("answer-two").innerHTML = "B. लंका ";
+            document.getElementById("answer-three").innerHTML = "C. मिथिला ";
+            document.getElementById("answer-four").innerHTML = "D. किष्किन्धा";
+            xyz.play();
+        }
+        // eleven
+        function questionEleven() {
+            document.getElementById("text-display").innerHTML =
+                "11.  भगवान राम की पत्नी कौन है?";
+            document.getElementById("answer-one").innerHTML = "A. सीता ";
+            document.getElementById("answer-two").innerHTML = "B. राधा";
+            document.getElementById("answer-three").innerHTML = "C.द्रौपदी ";
+            document.getElementById("answer-four").innerHTML = "D. पार्वती";
+            xyz.play();
+        }
+        // twelve
+        function questionTwelve() {
+            document.getElementById("text-display").innerHTML =
+                "12.  भगवान राम का वफादार और समर्पित वानर साथी कौन है? ";
+            document.getElementById("answer-one").innerHTML = "A.हनुमान ";
+            document.getElementById("answer-two").innerHTML = "B. सुग्रीव";
+            document.getElementById("answer-three").innerHTML = "C. जाम्बवन्त";
+            document.getElementById("answer-four").innerHTML = "D. बाली";
+            xyz.play();
+        }
+        // thirteen
+        function questionThirteen() {
+            document.getElementById("text-display").innerHTML =
+                "13.  रामायण में मुख्य प्रतिपक्षी कौन है?";
+            document.getElementById("answer-one").innerHTML = "A. रावण ";
+            document.getElementById("answer-two").innerHTML = "B. कुम्भकर्ण";
+            document.getElementById("answer-three").innerHTML = "C. इंद्रजीत ";
+            document.getElementById("answer-four").innerHTML = "D. मारीच";
+            xyz.play();
+        }
+        // fourteen
+        function questionFourteen() {
+            document.getElementById("text-display").innerHTML =
+                "14.  भगवान राम का जन्म कहाँ हुआ था?";
+            document.getElementById("answer-one").innerHTML = "A. बनारस";
+            document.getElementById("answer-two").innerHTML = "B. विंध्याचल";
+            document.getElementById("answer-three").innerHTML = "C. प्रयागराज";
+            document.getElementById("answer-four").innerHTML = "D. अयोध्या";
+            xyz.play();
+        }
+        // fifteen
+        function questionFifteen() {
+            document.getElementById("text-display").innerHTML =
+                " 15.  लक्ष्मण को किसका अवतार माना जाता है?";
+            document.getElementById("answer-one").innerHTML = "A. भगवान विष्णु";
+            document.getElementById("answer-two").innerHTML = "B. भगवान शिव";
+            document.getElementById("answer-three").innerHTML = "C. भगवान ब्रह्मा";
+            document.getElementById("answer-four").innerHTML = "D. शेषनाग";
+            xyz.play();
+        }
+        // question
+        function question(question) {
+            if (question == 1) {
+                questionNumber = 1;
+                questionOne();
+            } else if (question == 2) {
+                questionNumber = 2;
+                questionTwo();  
+            } else if (question == 3) {
+                questionNumber = 3;
+                questionThree();
+            } else if (question == 4) {
+                questionNumber = 4;
+                questionFour();
+            } else if (question == 5) {
+                questionNumber = 5;
+                questionFive();
+            } else if (question == 6) {
+                questionNumber = 6;
+                questionSix();
+            } else if (question == 7) {
+                questionNumber = 7;
+                questionSeven();
+            } else if (question == 8) {
+                questionNumber = 8;
+                questionEight();
+            } else if (question == 9) {
+                questionNumber = 9;
+                questionNine();
+            } else if (question == 10) {
+                questionNumber = 10;
+                questionTen();
+            } else if (question == 11) {
+                questionNumber = 11;
+                questionEleven();
+            } else if (question == 12) {
+                questionNumber = 12;
+                questionTwelve();
+            } else if (question == 13) {
+                questionNumber = 13;
+                questionThirteen();
+            } else if (question == 14) {
+                questionNumber = 14;
+                questionFourteen();
+            } else if (question == 15) {
+                questionNumber = 15;
+                questionFifteen();
+            }
+            else {
+                document.getElementById("text-display").innerHTML =
+                    "मुबारको आप जीत चुके हैं पूरे 7 करोड़ रुपये";
+            }   
+        }
+
+        // correct ans
+        function answer(givenAnswer) {
+            if (questionNumber == 1) {
+                if (givenAnswer == 1) {
+                    answerOne(true, 2);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 2) {
+                if (givenAnswer == 4) {
+                    answerOne(true, 3);
+                } else {
+                    answerOne(false, 0);                
+                }
+            } else if (questionNumber == 3) {
+                if (givenAnswer == 3) {
+                    answerOne(true, 4);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 4) {
+                if (givenAnswer == 3) {
+                    answerOne(true, 5);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 5) {
+                if (givenAnswer == 4) {
+                    answerOne(true, 6);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 6) {
+                if (givenAnswer == 2) {
+                    answerOne(true, 7);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 7) {
+                if (givenAnswer == 4) {
+                    answerOne(true, 8);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 8) {
+                if (givenAnswer == 1) {
+                    answerOne(true, 9);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 9) {
+                if (givenAnswer == 4) {
+                    answerOne(true, 10);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 10) {
+                if (givenAnswer == 1) {
+                    answerOne(true, 11);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 11) {
+                if (givenAnswer == 1) {
+                    answerOne(true, 12);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 12) {
+                if (givenAnswer == 1) {
+                    answerOne(true, 13);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 13) {
+                if (givenAnswer == 1) {
+                    answerOne(true, 14);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 14) {
+                if (givenAnswer == 4) {
+                    answerOne(true, 15);
+                } else {
+                    answerOne(false, 0);
+                }
+            } else if (questionNumber == 15) {
+                if (givenAnswer == 4) {
+                    answerOne(true, 16);
+                } else {
+                    answerOne(false, 0);
+                }
+            }
+        }
+        // correct or not
+        function answerOne(correctAnswer, nextQuestion) {
+            if (correctAnswer) {
+                document.getElementById("text-display").innerHTML =
+                    "बिल्कुल सही जवाब";
+                document.getElementById("container").style.backgroundColor =
+                    "#004225";
+
+                setTimeout(() => {
+                    question(nextQuestion);
+                }, 3000);
+            } else {
+                document.getElementById("text-display").innerHTML =
+                    "गलत जवाब.";
+                document.getElementById("container").style.backgroundColor =
+                    "#FF0000";
+                setTimeout(() => {
+                    startScreen();
+                }, 2000);
+            }
+        }
+        // hidden 
+        function dostart() {
+            document.getElementById("main-body").hidden = false;
+            document.getElementById("play-button").hidden = true;
+            question(1);
+        }
+
+        function startScreen() {
+            document.getElementById("main-body").hidden = true;
+            document.getElementById("play-button").hidden = false;
+
+        }
+    </script>
+</head>
+
+<body
+    style="background-image: url(https://pbs.twimg.com/ext_tw_video_thumb/1430113963283410944/pu/img/HJZ5Cp97N6wkNQsL.jpg:large); height: 100%; width: 100vw; background-repeat: no-repeat;">
+    <!-- start button -->
+    <button class="start-button" id="play-button" onclick="dostart()">LET"S START</button>
+    <!-- display -->
+    <div class="main-container" id="main-body" hidden="true">
+        <div class="display" id="container">
+            <h1 id="text-display" class="text-display"></h1>
+        </div>
+        <!-- buttons -->
+        <button class="button" id="answer-one" onclick="answer(1)"></button>
+        <button class="button" id="answer-two" onclick="answer(2)"></button>
+        <button class="button" id="answer-three" onclick="answer(3)"></button>
+        <button class="button" id="answer-four" onclick="answer(4)"></button>
+    </div>
+
+</body>
+
+</html>
