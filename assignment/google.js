@@ -1,20 +1,25 @@
-// JavaScript search
-function search() {
-        let input = document.getElementById("searchInput").value.toLowerCase(); let resultsDiv = document.getElementById("results");
-    // JavaScript  name all
-    let studentNames = ["ayush lolusare",  "himanshu", "yash",   "ayush nakade", "nikhil", "ratnesh", "soundary", "yogesh sir"];
-    let found = false;
-    for (let name of studentNames) {
-            if (input.includes(name)) {
-                resultsDiv.innerText = "THERE ARE THE STUDENT OF ENJOY PROGRAMMING";
-            resultsDiv.style.color = "blue";
-            found = true;
-        }   
+function submitSearch() {
+    // input
+    let searchValue = document.getElementById("searchInput").value;
+    // text converting capital to small
+    let converted = searchValue.toLowerCase();
+    // student name array
+    let inputs = ["Ayush ", "Prachi", "Nikita", "Yash", "Ketki", "Aachal", "Lucky", "Shraddha", "Shubham", "Ayush L", "Nikhil", "Himanshu", "Soundary", "Atharv", "Ratnesh"];
+    // if we let output false then the result shows student found or not found
+    let output = false;
+
+    // process
+    for (let g = 0; g < inputs.length; g++) {
+        if (inputs[g].toLowerCase() === converted) {
+            output = true;
+        }
     }
-    let foundteach = false;
-    // JavaScript found or not
-    if (found) {
-            resultsDiv.innerText = "THERE ARE NOT THE STUDENT OF ENJOY PROGRAMMING ";
-        resultsDiv.style.color = "red";
+    // output
+    if (output) {
+        document.getElementById("results").innerHTML = "The student's record is available.";
+        document.getElementById("results").style.color="blue";
+    } else {
+        document.getElementById("results").innerHTML = "Unable to locate the student's details.";
+        document.getElementById("results").style.color="red";
     }
 }
