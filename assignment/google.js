@@ -4,7 +4,7 @@ function submitSearch() {
     // text converting capital to small
     let converted = searchValue.toLowerCase();
     // student name array
-    let inputs = ["Ayush ", "Prachi", "Nikita", "Yash", "Ketki", "Aachal", "Lucky", "Shraddha", "Shubham", "Ayush L", "Nikhil", "Himanshu", "Soundary", "Atharv", "Ratnesh"];
+    let inputs = ["Ayush ", "Prachi", "Nikita", "Yash", "Ketki", "Aachal", "Lucky", "Shraddha", "Shubham", "Ayush L", "Nikhil", "Himanshu", "Soundary", "Atharv", "Ratnesh","Divyanshu"];
     // if we let output false then the result shows student found or not found
     let output = false;
 
