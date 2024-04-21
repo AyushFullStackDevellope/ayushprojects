@@ -9,7 +9,7 @@
             min-height: 550px;
             display: flex;
             margin-left: 500px;
-            box-shadow: 20px 20px 60px #f47373, -20px -20px 60px #f6fd9f;
+            box-shadow: 20px 20px 60px #04f3ef, -20px -20px 60px #f6fd9f;
             border-radius: 25px 25px;
             /* Adjusted border-radius */
             border: 7px solid rgb(0, 0, 0);
@@ -72,7 +72,7 @@
     <script>
 
         let currentSong = 0;
-        let songs = ["Dope Shope_64(PagalWorld.com.cm).mp3", "Pehle Bhi Main Tumse Mila Hu_64(PagalWorld.com.cm).mp3", "Satranga(PaglaSongs).mp3", "Silsila Ye Chahat Ka - Remix-(PagalSongs.Com.IN).mp3", "old_Rakta Charitra - Mila Toh Marega.mp3",];
+        let songs = ["Dope Shope_64(PagalWorld.com.cm).mp3","Satranga(PaglaSongs).mp3", "Pehle Bhi Main Tumse Mila Hu_64(PagalWorld.com.cm).mp3", "Silsila Ye Chahat Ka - Remix-(PagalSongs.Com.IN).mp3", "old_Rakta Charitra - Mila Toh Marega.mp3"];
 
         // call the play music Function
         function playMusic() {
@@ -85,7 +85,6 @@
             let audio = document.getElementById("audioPlayer");
             audio.pause();
         }
-
         // call the next button function
         function nextButton() {
             currentSong++;
