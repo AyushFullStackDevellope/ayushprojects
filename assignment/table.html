@@ -2,10 +2,12 @@
 <html>
 
 <head>
-    <title>EP_Days</title>
+    <title>EP_Table</title>
     <!-- internal styling -->
     <style>
         button {
+            margin-top: 100px;
+            margin-left: 640px;
             height: 5vh;
             width: 10vw;
             background: linear-gradient(135deg, #3498db, #2980b9);
@@ -15,13 +17,13 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
-            margin-left: 590px;
         }
 
         button:hover {
             background: linear-gradient(135deg, #2980b9, #3498db);
             transform: translateY(-2px);
         }
+
 
         #input {
             margin-left: 400px;
@@ -35,27 +37,27 @@
         }
 
         body {
-            background-image: url(https://thehomemadeparty.com/wp-content/uploads/2022/02/bkg-shamrock-selfie-buddy.png);
+            background-image: url(https://png.pngtree.com/background/20210710/original/pngtree-math-improve-class---vacation-hand-drawn-chalkboard-background-picture-image_1030625.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            height: 100vh;
+            height: 85vh;
             width: 100vw;
         }
 
         #display {
-            height: 20vh;
+            height: 30vh;
             width: 40vw;
             color: black;
-            background-color: rgba(0, 0, 0, 0);
+            background-color: rgba(52, 149, 201, 0);
             margin-top: 100px;
             margin-left: 400px;
-            color: azure;
+            color: rgb(230, 230, 230);
             font-size: larger;
             padding: 20px;
             animation-name: fadeIn;
             animation-duration: 1s;
             text-align: center;
-            font-size: 50px;
+            font-size: 25px;
         }
 
         @keyframes fadeIn {
@@ -68,32 +70,16 @@
             }
         }
     </style>
-    <!-- script -->
     <script>
-        function weeks() {
-            let numberOne = Number(prompt("ENTER A NUMBER"));
-            let day = numberOne;
-            let output;
-            document.getElementById("display").innerHTML = output;
-            console.log("the result", output)
-            if (day == 1) { output = "TODAY IS SUNDAY"; }
-            else
-                if (numberOne == 2) { output = "It's Monday"; }
-                else
-                    if (numberOne == 3) { output = "It's Tuesday"; }
-                    else
-                        if (numberOne == 4) { output = "It's Wednesday"; }
-                        else
-                            if (numberOne == 5) { output = "It's Thursday"; }
-                            else
-                                if (numberOne == 6) { output = "It's Friday"; }
-                                else
-                                    if (numberOne == 7) { output = "It's Saturday"; }
-                                    else {
-                                        output = "Does Not Exists";
-                                    }
-
-            document.getElementById("display").innerHTML = output;
+        function iterative() {
+            let table = Number(prompt("Select a number for the multiplication table"));
+            let result = "";
+            let x = 1;
+            while (x <= 10) {
+                result += `${table} × ${x} = ${table * x}<br>`;
+                x++;
+            }
+            document.getElementById("display").innerHTML = result;
         }
     </script>
 </head>
@@ -103,7 +89,7 @@
     <!-- input button display -->
     <div id="display"></div>
     <br>
-    <button onclick="weeks()"> CHECK</button>
+    <button onclick="iterative()">Try Now !!</button>
 </body>
 
 </html>

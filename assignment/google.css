@@ -117,21 +117,20 @@ nav button {
 }
 
 .search-button {
-    border: 1px solid transparent;
-    padding: 9px 15px;
-    color: #666;
-    font-size: 14px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-right: 10px;
-    margin-top: 28px;
+    border: none;
     outline: none;
+    background-color: #4285f4;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: border-color 100ms;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
 .search-button:hover {
-    border: 1px solid #aaa;
+    background-color: #357ae8;
 }
 
 

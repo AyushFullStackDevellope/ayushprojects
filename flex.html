@@ -6,30 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess</title>
     <style>
+        body {
+            background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b457890b-01c8-4458-8693-c28b8388efb4/d7nzw9z-d546a4fb-986a-4f4c-8345-e7f4c2dbda05.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I0NTc4OTBiLTAxYzgtNDQ1OC04NjkzLWMyOGI4Mzg4ZWZiNFwvZDduenc5ei1kNTQ2YTRmYi05ODZhLTRmNGMtODM0NS1lN2Y0YzJkYmRhMDUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.0l1RQeL_6ZNANxBNNdh5fjJ_TaOKum4f6z8fD12V52U");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
         .container {
             background-color: gray;
-            height: 50vw;
-            width: 50vw;
-            display: flex;
-            flex-direction:row ;
-            margin-left: 300px;
+            width: 60vw;
+            height: 40vw;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
         }
 
         .box {
+            width: 8vw;
+            height: 9vh;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
             background-color: black;
-            height: 5.9vw;
-            width: 5.9vw;
-            border-style: solid;
-
         }
+
 
         .white {
-            background-color: aliceblue;
-            border-style: solid;
-          
+            background-color: #f0d9b5;
         }
-        body {
-            background-color: rgb(98, 102, 102);
+
+        /* Additional styling for pieces */
+        .rook::before {
+            content: '\2656';
+            font-size: 50px;
+            color: rgb(255, 0, 0);
+
+        }
+
+        .knight::before {
+            content: '\2658';
+            font-size: 50px;
+            color: rgb(255, 0, 0);
+            /* Unicode for knight */
+        }
+
+        .bishop::before {
+            content: '\2657';
+            font-size: 50px;
+            color: rgb(255, 0, 0);
+            /* Unicode for bishop */
+        }
+
+        .queen::before {
+            content: '\2655';
+            font-size: 50px;
+            color: rgb(255, 0, 0);
+            /* Unicode for queen */
+        }
+
+        .king::before {
+            content: '\2654';
+            font-size: 50px;
+            color: rgb(255, 0, 0);
+            /* Unicode for king */
+        }
+
+        .pawn::before {
+            content: '\2659';
+            font-size: 50px;
+            color: rgb(255, 0, 0);
+            /* Unicode for pawn */
         }
     </style>
 </head>
@@ -37,101 +91,85 @@
 <body>
     <!-- main division -->
     <main class="container">
-        <div class="first-container">
-            <!-- first column  -->
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-             
-        </div>
-        <!-- second column  -->
-        <div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-        </div>
-        <div>
-            <!-- third column  -->
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-             
-        </div>
-        <!-- fourth column -->
-        <div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-        </div>
-        <div>
-            <!-- fifth column  -->
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-             
-        </div>
-        <div>
-            <!-- sixth column -->
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-        </div>
-        <div>
-            <!-- seventh column  -->
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-            <div class="box white"></div>
-            <div class="box"></div>
-             
-        </div>
-        <div>
-            <!-- eighth column -->
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-            <div class="box "></div>
-            <div class="box white"></div>
-        </div>
+        <!-- chessboard cells with pieces -->
+        <div class="box  rook"></div>
+        <div class="box white knight"></div>
+        <div class="box  bishop"></div>
+        <div class="box white queen"></div>
+        <div class="box  king"></div>
+        <div class="box white bishop"></div>
+        <div class="box  knight"></div>
+        <div class="box white rook"></div>
+
+        <div class="box white pawn"></div>
+        <div class="box pawn"></div>
+        <div class="box white pawn"></div>
+        <div class="box pawn"></div>
+        <div class="box white pawn"></div>
+        <div class="box pawn"></div>
+        <div class="box white pawn"></div>
+        <div class="box pawn"></div>
+
+        <!-- Empty cells -->
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+
+        <!-- Empty cells -->
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+
+        <!-- Empty cells -->
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+
+        <!-- Empty cells -->
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+        <div class="box white"></div>
+        <div class="box"></div>
+
+        <!-- Empty cells -->
+        <div class="box pawn"></div>
+        <div class="box white pawn"></div>
+        <div class="box pawn"></div>
+        <div class="box white pawn"></div>
+        <div class="box pawn"></div>
+        <div class="box white pawn"></div>
+        <div class="box pawn"></div>
+        <div class="box white pawn"></div>
+
+        <!-- Empty cells -->
+        <div class="box white rook"></div>
+        <div class="box knight" ></div>
+        <div class="box white bishop"></div>
+        <div class="box queen"></div>
+        <div class="box white king"></div>
+        <div class="box bishop"></div>
+        <div class="box white knight"></div>
+        <div class="box rook"></div>
     </main>
-
-
 </body>
 
 </html>

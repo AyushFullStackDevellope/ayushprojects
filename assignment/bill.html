@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Electric Bill Calculator</title>
+    <style>
+        body {
+            background-image: url("https://www.thishomemadelife.com/wp-content/uploads/2020/08/word-image-4-1024x682.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        button {
+            background-color: #002c5a;
+            color: #fff;
+            border: none;
+            font-size: 22px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 50px auto;
+            height: 430px;
+            background-color: rgba(127, 255, 212, 0);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 33px rgba(0, 0, 0, 0);
+            margin-top: 221px;
+        }
+
+        h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+            font-size: 44px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 33px;
+            margin-top: 91px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cccccc1e;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-size: 44px;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Calculator container -->
+    <div class="container">
+
+        <!-- Label and input field for entering units consumed -->
+        <label for="units">Enter Units Consumed:</label>
+        <input type="number" id="units" placeholder="Enter units consumed">
+        <!-- Button to trigger calculation -->
+        <button onclick="calculateBill()">Calculate</button>
+        <!-- Paragraph to display the result -->
+        <p id="result"></p>
+    </div>
+
+</body>
+<script>
+    function calculateBill() {
+        // Retrieve units consumed
+        let units = parseFloat(document.getElementById('units').value);
+        let rate;
+        let surcharge;
+
+        // Determine the rate
+        if (units <= 50) { rate = 0.5; } else if (units <= 150) { rate = 0.75; } else if (units <= 250) { rate = 1.25; } else if
+            (units <= 251) {
+            rate = 1.50; // Unclear condition } // Calculate bill amount based on let billAmount=units * rate;
+            // Apply surcharge if bill amount if (billAmount> 0) {
+            surcharge = billAmount * 0.2;
+            billAmount += surcharge; // Add surcharge to
+        }
+
+        // Update the result paragraph
+        document.getElementById('result').innerText = 'Your total bill amount is: ₹' + billAmount.toFixed(2); // Display
+        result
+    }
+</script>
+
+</html>
