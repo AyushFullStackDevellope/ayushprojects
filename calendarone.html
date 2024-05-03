@@ -2,141 +2,175 @@
 <html>
 
 <head>
-	<!-- internal styling -->
-	<style>
-		table {
-			border-collapse: collapse;
-			background: white;
-			color: black;
-			background-color:#b9d4d3;
-			height: 600px;
-			width: 1000px;
-			margin-left: 250px;
-		}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2980b9, #2c3e50);
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-		th,
-		td {
-			font-weight: bolder;
-			text-align: center;
-		
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
 
-		}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-		.tablehead {
-			background-color: rgb(140, 32, 162);
-			color: rgb(255, 255, 255);
-		}
+        th,
+        td {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-		body {
-			background-color: black;
-		}
+        th {
+            background: #34495e;
+        }
 
-		.caption {
-			color: orange;
-			font-size: xx-large;
-			text-align: center;
-		}
+        td {
+            background: #2980b9;
+            color: #fff;
+        }
 
-		.buttonone {
-			margin-left: 600px;
-			margin-top: 10px;
-		}
+        .event {
+            background: #c0392b;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 14px;
+        }
 
-		.buttontwo {
-			margin-left: 150px;
-			margin-top: 10px;
-		}
-	
-	</style>
-	<title>EP_Calendar</title>
+        .event img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            transition: transform 0.3s;
+        }
+
+        .event img:hover {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #219653;
+        }
+    </style>
+    <title>EP_Calendar</title>
 </head>
 
 <body>
-	<!-- Here iam using attributes like
-		cellspacing and cellpadding -->
-
-	<!-- table  -->
-	<div style="border-style: solid;border-color: crimson;">
-	<table cellspacing="21" cellpadding="21">
-		<!-- buttons -->
-			<h1 class="caption">Jan 2024</h1>
-			<a href="./calendarone.html"><button type="button" class="buttonone">⏪</button>
-				<a href="./calendartwo.html"><button class="buttontwo" type="buttontwo">⏩</button>
-		<br />
-
-		<thead>
-			<tr style="border-style: solid; border-color: #c3e0a6;">
-				<!-- weeks-->
-				<th class="tablehead"> Sun</th>
-				<th class="tablehead">Mon</th>
-				<th class="tablehead">Tue</th>
-				<th class="tablehead">wed</th>
-				<th class="tablehead">Thu</th>
-				<th class="tablehead">Fri</th>
-				<th class="tablehead">Sat</th>
-				<th class="tablehead">EVENTS</th>
-
-
-			</tr>
-		</thead>
-
-		<tbody>
-			<!-- Dates	 -->
-			<tr>
-				<!-- inline Css -->
-				<td style="background-color: #BF3131;">31</td>
-				<td style=" background-color: #ad616d; border-radius: 50%; width: 36px;height: 36px;">1 <br>	</td>
-				<td>2</td>
-				<td>3</td>
-				<td>4</td>
-				<td>5</td>
-				<td>6</td>
-				<td style="border-color:#ad616d; background-color:#ad616d;">1→ New year</td>
-			</tr>
-			<tr>
-				<td style="background-color: #BF3131;">7</td>
-				<td>8</td>
-				<td>9</td>
-				<td>10</td>
-				<td>11</td>
-				<td>12</td>
-				<td>13</td>
-				<td style=" background-color: #ad616d;border-color:#ad616d;">26→ Republic Day</td>
-			</tr>
-			<tr>
-				<td style="background-color: #BF3131;">14</td>
-				<td>15</td>
-				<td>16</td>
-				<td>17</td>
-				<td>18</td>
-				<td>19</td>
-				<td>20</td>
-				<td style=" background-color: #ad616d; border-color:#ad616d;;"><img src="https://blog.woodenstreet.com/images/data/image_upload/1674190626bannernew1.jpg" style="height: 50px; width: 100px;"></td>
-			</tr>
-			<tr>
-				<td style="background-color: #BF3131;">21</td>
-				<td>22</td>
-				<td>23</td>
-				<td>24</td>
-				<td>25</td>
-				<td  style=" background-color: #ad616d; border-color:#000000; border-radius: 50%; width: 36px;height: 36px;">26</td>
-				<td>27</td>
-				<td style=" background-color: #ad616d; border-color:#ad616d;;"><img src="https://i0.wp.com/allresultbd.com/ent/wp-content/uploads/2023/08/New-Year-2024.jpg?fit=500%2C300&ssl=1" style="height: 50px; width: 100px;"></td>
-			</tr>
-			<tr>
-				<td style="background-color: #BF3131;">28</td>
-				<td>29</td>
-				<td>30</td>
-				<td>31</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td style=" background-color: #ad616d;border-color:#ad616d;"></td>
-			</tr>
-
-		</tbody>
-	</table>
-	</div>
+    <div class="container">
+        <h1 class="caption">Jan 2024</h1>
+        <div class="button-container">
+            <a href="#" class="button">⏪</a>
+            <a href="calendartwo.html" class="button">⏩</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Events</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="event-day">31</td>
+                    <td class="event-day">1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td class="event"><img src="https://blog.woodenstreet.com/images/data/image_upload/1674190626bannernew1.jpg" alt="Event Image"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td class="event">Republic Day</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td class="event"><img src="https://i0.wp.com/allresultbd.com/ent/wp-content/uploads/2023/08/New-Year-2024.jpg?fit=500%2C300&ssl=1" alt="Event Image"></td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td class="event"></td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="event"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>

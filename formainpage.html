@@ -20,11 +20,7 @@
             background-color: black;
         }
 
-        .s2 {
-            background-color: #96E9C6;
-            width: 10%;
-            padding-right: 25px;
-        }
+
 
         h1 {
             text-align: center;
@@ -35,10 +31,24 @@
             background-color: #294B29;
         }
 
-        .s3 {
-            background-color: #D04848;
-            width: 10%;
-            padding-right: 20px;
+        .button {
+            background-color: #96e9c6;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+            text-decoration: none;
+            outline: none;
+        }
+
+        /* button hover effect */
+        .button:hover {
+            background-color: #75d9b0;
+            transform: scale(1.05);
         }
     </style>
     <!-- google fonts -->
@@ -98,10 +108,10 @@
             <br><br>
             <!-- buttons -->
             <a href="./formdetails.html">
-                <input class="s3" type="button" value="Preview"></a>
+                <input class="button" type="button" value="Preview"></a>
             &emsp;
             <a href="./formcompletation.html">
-            <input class="s2" type="button" value="Submit"> </a>
+                <input class="button" type="button" value="Submit"> </a>
         </fieldset>
     </form>
     <h1>😊THANK YOU</h1>

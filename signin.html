@@ -3,25 +3,25 @@
 
 <head>
   <title>enjoyprogramming.registration</title>
-  
-  
+
+
   <!-- internal styling -->
   <style>
- /* background image */
-body  {
-  background-image: url("https://scontent.fnag12-1.fna.fbcdn.net/v/t39.30808-1/428666087_122132408708048340_3787509526926870149_n.jpg?stp=dst-jpg_p480x480&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=7IMqK6LAyzwQ7kNvgHqw2t4&_nc_ht=scontent.fnag12-1.fna&oh=00_AfDeJ4NHNeDooj4SXbS2CeHOXRcjpuW3Ua2a5HP_bkJGmA&oe=663A3BD4");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 700px;
- 
-}
+    /* background image */
+    body {
+      background-image: url("https://scontent.fnag12-1.fna.fbcdn.net/v/t39.30808-1/428666087_122132408708048340_3787509526926870149_n.jpg?stp=dst-jpg_p480x480&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=7IMqK6LAyzwQ7kNvgHqw2t4&_nc_ht=scontent.fnag12-1.fna&oh=00_AfDeJ4NHNeDooj4SXbS2CeHOXRcjpuW3Ua2a5HP_bkJGmA&oe=663A3BD4");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: 700px;
+
+    }
 
     body {
       background-color: black;
       font-family: 'Gamja Flower', sans-serif;
       font-family: 'Space Mono', monospace;
       margin-top: 150px;
-     
+
     }
 
     h1 {
@@ -39,23 +39,31 @@ body  {
 
     }
 
-    .s2 {
-      background-color: #96E9C6;
-      width: 10%;
-      padding-right: 40px;
+    .button {
+      background-color: #96e9c6;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      border-radius: 5px;
+      text-decoration: none;
+      outline: none;
     }
 
-    .s1 {
-      background-color: #96E9C6;
-      width: 10%;
-      padding-right: 40px;
+    /* button hover effect */
+    .button:hover {
+      background-color: #75d9b0;
+      transform: scale(1.05);
     }
   </style>
 
-  </head>
+</head>
 
-  <body>
-    <div>
+<body>
+  <div>
     <!-- header -->
     <h1>WELC⭕ME!!</h1>
     <!-- form -->
@@ -68,13 +76,13 @@ body  {
       <div class="st1">
         <!-- button -->
         <a href="./login.html">
-          <button class="s1" type="button" class="cancelbtn">Sign in</button></a>
+          <button class="button" type="button" class="cancelbtn">Sign in</button></a>
         &emsp;&emsp;OR&emsp;&emsp;
         <a href="./formdetails.html">
-          <button class="s2" type="submit" class="signupbtn">Create New</button></a>
+          <button class="button" type="submit" class="signupbtn">Create New</button></a>
       </div>
-      
+
     </form>
-  </body>
+</body>
 
 </html>
