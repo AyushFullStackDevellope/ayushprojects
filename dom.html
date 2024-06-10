@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EP_Game</title>
+    <!-- internal styling -->
     <style>
         body {
             margin: 0;
@@ -72,17 +74,21 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- main container and UI -->
     <div class="main-container">
         <div class="left-container">
             <h1 style="color: white" id="count">1</h1>
             <button id="button-one" class="button plus-button" onclick="addBrick()">ADD</button>
             <button class="button minus-button" onclick="removeBrick()">REMOVE</button>
         </div>
+        <!-- UI for bricks -->
         <div id="right-container" class="right-container">
             <div class="brick"></div>
         </div>
     </div>
     <script src="dom.js"></script>
 </body>
+
 </html>

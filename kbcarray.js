@@ -89,7 +89,8 @@ function answer(givenAnswer) {
             document.getElementById("text-display").style.color = "red";
             currentQuestionIndex = 0;
             // time taken by loader
-            setTimeout(displayQuestion, 2100); // Delay before resetting to the first question
+            setTimeout(displayQuestion, 2100);
+            // Delay before resetting to the first question
         }
     }, 2100);
 }

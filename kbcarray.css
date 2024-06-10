@@ -27,15 +27,18 @@ body {
     margin-top: 440px;
 }
 
+/* start button hover */
 .start-button:hover {
     transform: translateY(-3px);
 }
 
+/* styling for main container */
 .main-container {
     width: 90%;
     max-width: 800px;
 }
 
+/*  display container */
 .display {
     width: 80%;
     height: 200px;
@@ -50,6 +53,7 @@ body {
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
+/* questions displaying text  */
 .text-display {
     font-size: 10px;
     color: #4CAF50;
@@ -66,6 +70,7 @@ body {
     padding: 20px;
 }
 
+/* main play button */
 .button {
     height: 60px;
     width: 100%;
@@ -101,7 +106,7 @@ body {
     }
 }
 
-/* HTML:  */
+/* loader */
 .loader {
     width: 50px;
     aspect-ratio: 1;

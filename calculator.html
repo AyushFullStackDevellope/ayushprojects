@@ -2,19 +2,21 @@
 <html lang="en">
 
 <head>
-
+    <!-- fav icon link -->
     <link rel="icon" type="image/x-icon"
         href="https://w7.pngwing.com/pngs/880/820/png-transparent-computer-icons-calculator-calculator-electronics-text-rectangle-thumbnail.png">
+    <!-- internal styling -->
     <style>
         .main {
-            height: 50vw;
+            height: 80vh;
             width: 40vw;
             background-color: black;
             display: grid;
             grid-template-rows: 1fr 3fr;
             padding: 10px;
-            margin-left: 400px;
+            margin-left: 100px;
             border-radius: 2%;
+            margin-top: 60px;
         }
 
         .second-box {
@@ -35,14 +37,16 @@
             border: none;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             border-radius: 5px;
-            cursor: pointer;
+            cursor: cell;
             transition: background-color 0.3s ease;
 
         }
+
         button:hover {
             background-color: #d8c4c4;
             color: black;
         }
+
         .last-row {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
@@ -51,22 +55,29 @@
             grid-gap: 10px;
             margin-top: 10px;
         }
+
         .clear {
             background-color: #ff4136;
             color: #fff;
         }
+
         body {
-            background-color: rgb(159, 100, 152);
+            background-image: url("https://img.freepik.com/free-photo/top-view-calculator-notebook-frame_23-2149103980.jpg");
+            background-position: center;
+            background-size: cover;
         }
+
         .number {
             background-color: #fff;
             color: #333;
 
         }
+
         .operator {
             background-color: #FF8911;
             color: #fff;
         }
+
         #display {
             background-color: rgb(124, 124, 124);
             color: rgb(255, 255, 255);
@@ -76,6 +87,7 @@
             border-radius: 5%;
         }
     </style>
+    <!-- script  -->
     <script>
         let action = 0;
         let displayString = "";
@@ -85,30 +97,35 @@
             displayString = displayString + passnumber.toString();
             document.getElementById("display").innerHTML = displayString;
         }
+        // function for add button
         function add() {
             total = Number(displayString);
             action = 1;
             displayString = "";
             document.getElementById("display").innerHTML = displayString;
         }
+        // function for subtract button
         function minus() {
             total = Number(displayString);
             action = 2;
             displayString = "";
             document.getElementById("display").innerHTML = displayString;
         }
+        // function for  division 
         function div() {
             total = Number(displayString);
             action = 3;
             displayString = "";
             document.getElementById("display").innerHTML = displayString;
         }
+        // function for multiplication
         function multiply() {
             total = Number(displayString);
             action = 4;
             displayString = "";
             document.getElementById("display").innerHTML = displayString;
         }
+        // calculator keys working 
         function showresult() {
             if (action == 1) {
                 total = total + Number(displayString);
@@ -125,10 +142,12 @@
             document.getElementById("display").innerHTML = displayString;
 
         }
+        // back space button
         function backspace() {
             displayString = displayString.substring(0, displayString.length - 1)
             document.getElementById("display").innerHTML = displayString;
         }
+        // clear function button
         function clearFunction() {
             total = 0;
             displayString = " ";
@@ -140,6 +159,7 @@
 </head>
 
 <body>
+    <!-- main html code and UI of calculator -->
     <main class="main">
         <div id="display">
             <div class="first-box">
@@ -154,6 +174,7 @@
                 </div>
             </div>
         </div>
+        <!-- calculator  -->
         <div style="height: 100%; width: 100%;">
             <div class="second-box">
                 <div><button onclick="clearFunction()" class="clear">AC</button></div>
