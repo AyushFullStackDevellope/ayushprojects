@@ -6,7 +6,7 @@
   <!-- CSS files favicons links -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="icon " href="https://cdn-icons-png.flaticon.com/512/2/2144.png">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2/2144.png">
   <!-- internal styling -->
   <style>
     body,
@@ -16,10 +16,11 @@
     h4,
     h5,
     h6 {
-      font-family: "Raleway", sans-serif;
-      cursor:crosshair;
+      font-family: sans-serif;
+      cursor: crosshair;
     }
-/* scroll behaviour */
+
+    /* scroll behaviour */
     html {
       scroll-behavior: smooth;
     }
@@ -29,39 +30,85 @@
       display: flex;
       align-items: center;
       transition: transform 0.2s;
-      cursor:alias;
+      cursor: alias;
+      width: 100%;
+      height: auto;
+      max-width: 150px;
+      margin: auto;
     }
-
-    .img:hover {
-      transform: translateY(-9px);
-    }
-
-
 
     /* Adjustments for sidebar */
     .w3-sidebar {
-      width: 15vw;
+      width: 250px;
       position: fixed;
       z-index: 3;
       top: 0;
       left: 0;
       height: 100%;
       overflow: hidden;
+      background: #222;
+      color: #fff;
       transition: width 0.5s;
     }
 
+    .w3-sidebar a {
+      color: #fff;
+    }
+
     .w3-main {
-      margin-left: 20vw;
+      margin-left: 250px;
       transition: margin-left 0.5s;
+    }
+
+    .w3-main header {
+      background: #444;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
     }
 
     @media (max-width: 992px) {
       .w3-sidebar {
+        width: 100px;
+      }
+
+      .w3-main {
+        margin-left: 100px;
+      }
+
+      /* mobile responsive images */
+      .img {
+        max-width: 200px;
+      }
+
+      .w3-sidebar a {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .w3-sidebar {
         width: 0;
+        transition: 0.3s;
       }
 
       .w3-main {
         margin-left: 0;
+      }
+
+      .w3-overlay {
+        display: block;
+      }
+
+      .img {
+        max-width: 50px;
+      }
+
+      .toggle-sidebar {
+        display: block;
+        z-index: 9999;
+        /* Set a higher z-index */
       }
     }
 
@@ -71,260 +118,333 @@
       margin: 0;
       padding: 0;
     }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .w3-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .project-card {
+      flex: 1 1 200px;
+      max-width: 300px;
+      background-color: rgba(255, 255, 255, 0.75);
+      text-align: center;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgb(69, 69, 69);
+      transition: transform 0.2s;
+      margin-bottom: 3%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 360px) {
+      .project-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    .skills-section {
+      margin: 20px auto;
+      max-width: 800px;
+      height: 300px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgb(69, 69, 69);
+    }
+
+    .skills-section h4 {
+      text-align: center;
+    }
+
+    .toggle-sidebar {
+      display: none;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: #222;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    @media (max-width: 600px) {
+      .w3-sidebar {
+        width: 250px;
+        height: 100%;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #222;
+        color: #fff;
+        z-index: 9999;
+        overflow-y: auto;
+        transition: 0.3s;
+      }
+
+      .w3-sidebar a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #444;
+      }
+
+      .w3-overlay {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        display: none;
+      }
+
+      .toggle-sidebar {
+        display: block;
+        z-index: 10000;
+        /* Set a higher z-index */
+      }
+    }
   </style>
 </head>
 
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
+
   <!-- Sidebar/menu -->
-  <nav class="w3-sidebar" id="mySidebar">
+  <nav class="w3-sidebar w3-bar-block w3-collapse w3-card" id="mySidebar">
     <br>
-    <div class="w3-container">
+    <div class="w3-container w3-center">
       <!-- heading in sidebar -->
-      <img src="./images & audio/AYUSHH.jpeg" style="width:60%; border-radius: 50%; " class="w3-round"><br><br>
-      <h4 style="text-align: center;"><b>AYUSH'S PORTFOLIO</b></h4>
+      <img src="./assets/Ayush.jpeg" alt="Profile Picture" title="Ayush Nakade "
+        style="border-radius: 50%; width: 10vw;">
+      <br><br>
+      <h4><b>AYUSH'S PORTFOLIO</b></h4>
     </div>
     <div class="w3-bar-block">
       <a href="resume.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
-          class="fa fa-user fa-fw w3-margin-right" style=" font-size: 20px;"></i>ABOUT</a>
-    </div>
-    <div class="w3-panel w3-large">
-      <!-- social media links -->
-      <h4 style="text-align: center;"><b>Get in touch</b></h4><br>
-      <a href="https://www.facebook.com/"><i class="fa fa-facebook-official w3-hover-opacity"
-          style=" font-size:  30px"></i></a>
-      &emsp;Facebook
-      <br>
-      <br>
-      <a
-        href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fdirect%2Finbox%2F%3F__coig_login%3D1"><i
-          class="fa fa-instagram w3-hover-opacity" style=" font-size: 30px;"></i></a>&emsp;Instagram<br> <br>
-      <a href="https://ayushfullstackdevellope.github.io/ayushprojects/"><i class="fa fa-github w3-hover-opacity"
-          style=" font-size:  30px;"></i></a>&emsp;Github
-      <br>
-      <br>
-      <a href="https://twitter.com"><i class="fa fa-twitter w3-hover-opacity"
-          style=" font-size:  30px"></i></a>&emsp;Twitter
-      <br>
-      <br>
-      <a href="https://www.linkedin.com"><i class="fa fa-linkedin w3-hover-opacity"
-          style=" font-size:  30px"></i></a>&emsp;Linkedin
-      <br>
-      <br>
+          class="fa fa-user fa-fw w3-margin-right" style=" font-size: 25px;"></i>ABOUT</a>
+      <a href="https://www.facebook.com/" class="w3-bar-item w3-button w3-padding"><i
+          class="fa fa-facebook-official w3-hover-opacity w3-margin-right" style=" font-size:25px"></i> Facebook</a>
+      <a href="https://www.instagram.com/" class="w3-bar-item w3-button w3-padding"><i
+          class="fa fa-instagram w3-hover-opacity w3-margin-right" style=" font-size:25px"></i> Instagram</a>
+      <a href="https://www.linkedin.com/in/ayush-nakade-19431a286/" class="w3-bar-item w3-button w3-padding"><i
+          class="fa fa-linkedin w3-hover-opacity w3-margin-right" style=" font-size:25px"></i> Linkedin</a>
+      <a href="https://twitter.com" class="w3-bar-item w3-button w3-padding"><i
+          class="fa fa-twitter w3-hover-opacity w3-margin-right" style=" font-size:25px"></i> Twitter</a>
+      <a href="https://github.com/AyushFullStackDevellope/ayushprojects"
+        class="w3-bar-item w3-button w3-padding w3-margin-right"><i
+          class="fa fa-github w3-hover-opacity w3-margin-right" style=" font-size:25px"></i> Github</a>
     </div>
   </nav>
-
   <!-- Overlay effect when opening sidebar on small screens -->
-  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" title="close side menu" id="myOverlay">
+  <div class="w3-overlay w3-hide-large " onclick="w3_close()" title="close side menu" id="myOverlay">
   </div>
-
   <!-- !PAGE CONTENT! -->
-  <div class="w3-main" style="margin-left:250px" style="cursor:cell">
+  <div class="w3-main" id="portfolio">
 
     <!-- Header -->
-    <header id="portfolio">
-      <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;"
-          class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-      <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
-          class="fa fa-bars"></i></span>
+    <header>
+      <span class="w3-button w3-hide-large w3-xxlarge" style="align-items: flex-start; display: flex;"
+        onclick="w3_open()"><i class="fa fa-bars"></i></span>
       <div class="w3-container">
+
         <h1><b>My Projects</b></h1>
         <div class="w3-section w3-bottombar w3-padding-16">
           <span class="w3-margin-right">Projects Using:</span>
-          <a href="#first-row">
-            <p class="w3-button w3-black"><i class="fa fa-code w3-margin-right"></i>HTML</p>
-          </a>
-          <a href="#second-row">
-            <p class="w3-button w3-black"><i class="fa fa-code w3-margin-right"></i>CSS</p>
-          </a>
-          <a href="#third-row">
-            <p class="w3-button w3-black "><i class="fa fa-code script w3-margin-right"></i>Java Script</p>
-          </a>
+          <a href="#first-row" class="w3-button w3-black"><i class="fa fa-code w3-margin-right"></i>HTML</a>
+          <a href="#second-row" class="w3-button w3-black"><i class="fa fa-code w3-margin-right"></i>CSS</a>
+          <a href="#third-row" class="w3-button w3-black"><i class="fa fa-code w3-margin-right"></i>JavaScript</a>
         </div>
       </div>
     </header>
-
     <!-- First Photo Grid-->
     <div class="w3-row-padding gallery" id="first-row">
-      <div class="w3-row-padding" id="first-row">
-        <div class="w3-third w3-container w3-margin-bottom">
-          <a href="./signin.html"><img
-              src="https://scontent.fnag12-1.fna.fbcdn.net/v/t39.30808-1/428666087_122132408708048340_3787509526926870149_n.jpg?stp=dst-jpg_p480x480&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Ysnvn99NrIMQ7kNvgHLlbV0&_nc_ht=scontent.fnag12-1.fna&oh=00_AYDi0O_ae93wA2CmJTsG59bLvY9LuJ8ii26C8f97dQBtkg&oe=6667B794"
-              style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-          <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-            <p><b>Registration Form</b></p>
-          </div>
-        </div>
-        <div class="w3-third w3-container w3-margin-bottom">
-          <a href="./cv.html"><img
-              src="https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-vector-resume-icon-png-image_998136.jpg"
-              alt="Norway" style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-          <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-            <p><b>My Resume</b></p>
-          </div>
-        </div>
-        <div class="w3-third w3-container">
-          <a href="./calendarone.html"> <img
-              src="https://png.pngtree.com/png-vector/20190119/ourmid/pngtree-calendar-icon-graphic-design-template-vector-png-image_325812.jpg"
-              alt="Norway" style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-          <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-            <p><b>Calander Project</b></p>
-          </div>
+      <div class="project-card">
+        <a href="./signin.html">
+          <img src="https://png.pngitem.com/pimgs/s/197-1971077_self-storage-blog-icon-blog-icon-transparent-hd.png"
+            alt="Project Image" class="img">
+        </a>
+        <p><b>Registration Form</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./cv.html">
+          <img
+            src="https://p.kindpng.com/picc/s/484-4847061_man-resume-document-employee-shortlisted-portfolio-unique-website.png"
+            alt="Project Image" class="img">
+        </a>
+        <p><b>My Resume</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./calendarone.html">
+          <img src="https://i.pinimg.com/originals/fe/b6/b0/feb6b0e65c95002e6c998f7e580ab1c9.png" alt="Project Image"
+            class="img">
+        </a>
+        <p><b>Calandar Project</b></p>
+      </div>
+    </div>
+    <!-- second Photo Grid-->
+    <div class="w3-row-padding gallery" id="first-row">
+      <div class="project-card">
+        <a href="./cargame.html">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_vfn03HIHlItzzz7n1EobBjvThj2pCttANs9R0ZfRvf5g7Z493TS85eUVshzYAPZ5mvE&usqp=CAU"
+            alt="Project Image" class="img">
+        </a>
+        <p><b>Animated Car Game</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./youtube.html">
+          <img src="https://i.pinimg.com/736x/e3/e3/48/e3e3480c7752cebc014ece611369876b.jpg" alt="Project Image"
+            class="img">
+        </a>
+        <p><b>YouTube Project</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./chess.html">
+          <img
+            src="https://www.shutterstock.com/image-vector/chess-pieces-vector-illustration-king-600nw-1940151418.jpg"
+            alt="Project Image" class="img">
+        </a>
+        <p><b>Chess Board</b></p>
+      </div>
+    </div>
+    <!--third Photo Grid-->
+    <div class="w3-row-padding gallery" id="first-row">
+      <div class="project-card">
+        <a href="./dom.html">
+          <img src="https://img.lovepik.com/element/45012/5592.png_860.png" alt="Project Image" class="img">
+        </a>
+        <p><b>Ring Game</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./assignment/days.html">
+          <img src="https://cdn-icons-png.flaticon.com/512/6358/6358223.png" alt="Project Image" class="img">
+        </a>
+        <p><b>Days Project</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./assignment/calculator.html">
+          <img src="https://icons.veryicon.com/png/o/miscellaneous/iview30-ios-style/ios-calculator-4.png"
+            alt="Project Image" class="img">
+        </a>
+        <p><b>Calculator</b></p>
+      </div>
+    </div>
+    <!-- fourth Photo Grid-->
+    <div class="w3-row-padding gallery" id="first-row">
+      <div class="project-card">
+        <a href="./kbcarray.html">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaboUkuwE0nOyDMJZKX6AVMxXhKdwOwPU_Dg&usqp=CAU"
+            alt="Project Image" class="img">
+        </a>
+        <p><b>KBC</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./en">
+          <img
+            src="https://scontent.fnag12-1.fna.fbcdn.net/v/t39.30808-1/428666087_122132408708048340_3787509526926870149_n.jpg?stp=dst-jpg_p480x480&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Ysnvn99NrIMQ7kNvgHLlbV0&_nc_ht=scontent.fnag12-1.fna&oh=00_AYDi0O_ae93wA2CmJTsG59bLvY9LuJ8ii26C8f97dQBtkg&oe=6667B794"
+            alt="Project Image" class="img">
+        </a>
+        <p><b>EP Search Engine</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./assignment/table.html">
+          <img src="https://i.pinimg.com/736x/2c/a7/eb/2ca7eb459dd878064a0cd4297217f070.jpg" alt="Project Image"
+            class="img">
+        </a>
+        <p><b>Multiplication Table</b></p>
+      </div>
+    </div>
+    <!-- Fifth Photo Grid-->
+    <div class="w3-row-padding gallery" id="first-row">
+      <div class="project-card">
+        <a href="./assignment/musicplayer.html">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQZRYR-teMO8ClDR3mIGxMHj4GJHT1_4W2nr_vowXpj_moar_YaBabWqQ1X098V9S5ADU&usqp=CAU"
+            alt="Project Image" class="img">
+        </a>
+        <p><b>Music Player</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./assignment/vowel.html">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSQSw1suHwMKqyR5MdsN7MlBDwDzG7XJulpwD2-8qC2FYSjqQxZFZOX4TYXx3s75e-DcA&usqp=CAU"
+            alt="Project Image" class="img">
+        </a>
+        <p><b>Vowels</b></p>
+      </div>
+      <div class="project-card">
+        <a href="./assignment/evenodd.html">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvPeoT4Oeh8UrsBiHJlVAakBrfenVJY1-aag&s"
+            class="img">
+        </a>
+        <p><b>Even or Odd</b></p>
+      </div>
+    </div>
+
+
+    <!-- Skills Section -->
+    <div class="skills-section">
+      <h4>My Skills</h4>
+      <div class="w3-container">
+        <p><b>Web Development</b></p>
+        <div class="w3-light-grey w3-round-xlarge">
+          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
         </div>
       </div>
-
-      <!-- Second Photo Grid-->
-      <div class="w3-row-padding" id="second-row">
-        <div class="w3-third w3-container w3-margin-bottom">
-          <a href="./blogs.html"> <img src="https://samanthaming.gumlet.io/flexbox30/7-display.jpg.gz"
-              style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-          <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-            <p><b>Fixed Format Project</b></p>
-          </div>
+      <div class="w3-container">
+        <p><b>IOS Development</b></p>
+        <div class="w3-light-grey w3-round-xlarge">
+          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
         </div>
-        <div class="w3-third w3-container w3-margin-bottom">
-          <a href="./youtube.html"><img src="https://i.pinimg.com/736x/9a/25/a3/9a25a391d3e5a3e14f5dde1855a71fd9.jpg"
-              style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-          <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-            <p><b>YouTube Page Project</b></p>
-          </div>
+      </div>
+      <div class="w3-container">
+        <p><b>Andriod Development</b></p>
+        <div class="w3-light-grey w3-round-xlarge">
+          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
         </div>
-        <div class="w3-third w3-container">
-          <a href="./flex.html"><img
-              src="https://media.licdn.com/dms/image/D4D12AQG2cZ9LSbCKvA/article-cover_image-shrink_720_1280/0/1679111769798?e=2147483647&v=beta&t=sQT99I0qLKaj9U8WmwDcV-4JBAtnufokOvWyYXvWJ_g"
-              style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-          <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-            <p><b>Chess Board</b></p>
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
 
-        <!-- Third Photo Grid-->
-        <div class="w3-row-padding" id="third-row">
-          <div class="w3-third w3-container w3-margin-bottom" id="third-row">
-            <a href="./dom.html"><img
-                src="https://static.vecteezy.com/system/resources/thumbnails/000/557/520/small_2x/Old_game2.jpg"
-                style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-            <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-              <p><b>Ring Game </b></p>
-            </div>
-          </div>
-          <div class="w3-third w3-container w3-margin-bottom">
-            <a href="./assignment/days.html"><img src="https://en.pimg.jp/099/439/148/1/99439148.jpg"
-                style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-            <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-              <p><b>Days</b></p>
-            </div>
-          </div>
-          <div class="w3-third w3-container">
-            <a href="./assignment/calculator.html"><img
-                src="https://help.apple.com/assets/63FD49E28D6264536445EC7D/63FD49E28D6264536445EC84/en_GB/f19c7e914f0adb59c0833d00d09f1ea7.png"
-                style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-            <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-              <p><b>Calculator Project</b></p>
-            </div>
-          </div>
+  <!-- JavaScript for sidebar functionality -->
+  <script>
 
-          <!-- Fourth Photo Grid-->
-          <div class="w3-row-padding">
-            <div class="w3-third w3-container w3-margin-bottom">
-              <a href="./assignment/millonaire.html"><img
-                  src="https://e7.pngegg.com/pngimages/115/303/png-clipart-millionaire-nigeria-game-show-television-show-quiz-sony-s-television-others-logo-sony-pictures-television-thumbnail.png"
-                  style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-              <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-                <p><b>Who wants to be a Millonaire Game</b></p>
-              </div>
-            </div>
-            <div class="w3-third w3-container w3-margin-bottom">
-              <a href="./assignment/google.html"><img
-                  src="https://scontent.fnag12-1.fna.fbcdn.net/v/t39.30808-1/428666087_122132408708048340_3787509526926870149_n.jpg?stp=dst-jpg_p480x480&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Ysnvn99NrIMQ7kNvgHLlbV0&_nc_ht=scontent.fnag12-1.fna&oh=00_AYDi0O_ae93wA2CmJTsG59bLvY9LuJ8ii26C8f97dQBtkg&oe=6667B794"
-                  style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-              <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-                <p><b>EP Search Engine</b></p>
-              </div>
-            </div>
-            <div class="w3-third w3-container">
-              <a href="./assignment/table.html"><img
-                  src="https://play-lh.googleusercontent.com/ruLzstqTK7rhxyVcx1mB-CGoUIqfdIh0C98RQAZ6m4GD1PV46q6EvWgPuMYPW-B_nI8=w240-h480-rw"
-                  style="width: auto; height: 15vh; margin-left: 120px;" class="img"></a>
-              <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-                <p><b>Multiplication Table</b></p>
-              </div>
-            </div>
 
-            <!-- Fifth Photo Grid-->
-            <div class="w3-row-padding">
-              <div class="w3-third w3-container w3-margin-bottom">
-                <a href="./assignment/musicplayer.html"><img
-                    src="https://store-images.s-microsoft.com/image/apps.31298.13647187113641864.941fe32b-44b3-4464-8cde-82e96c5d5d21.fe1a0ffe-e2de-427e-ba47-3ca17c289ddc?h=464"
-                    style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-                <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-                  <p><b>Music Player</b></p>
-                </div>
-              </div>
-              <div class="w3-third w3-container w3-margin-bottom">
-                <a href="./assignment/vowel.html"><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQSqpZJytfYflduU7uU6TDSXfqfgdgGa4kkzsLm25QhYunQcYxivqUisub_443DY1Lwn0&usqp=CAU"
-                    style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-                <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-                  <p><b>Vowel</b></p>
-                </div>
-              </div>
-              <div class="w3-third w3-container w3-margin-bottom">
-                <a href="./kbcarray.html"><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaboUkuwE0nOyDMJZKX6AVMxXhKdwOwPU_Dg&usqp=CAU"
-                    style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-                <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-                  <p><b>Kon Banega Crorepati Game</b></p>
-                </div>
-              </div>
-              <!-- sixth row -->
-            <div class="w3-row-padding">
-              <div class="w3-third w3-container w3-margin-bottom">
-                <a href="./cargame.html"><img
-                    src="https://i.pinimg.com/564x/2d/1d/36/2d1d36741a3a047a856e112c7d9ab1b7.jpg"
-                    style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-                <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-                  <p><b>Animated Car game</b></p>
-                </div>
-              </div>
-              <div class="w3-third w3-container w3-margin-bottom">
-                <a href="./assignment/evenodd.html"><img
-                    src="https://m.media-amazon.com/images/I/61hFVdt7F0L.png"
-                    style="width:auto; height: 15vh; margin-left: 120px;" class="img"></a>
-                <div style="background-color: rgb(255, 255, 255); padding: 2px; text-align: center;">
-                  <p><b>Even or Odd</b></p>
-                </div>
-              </div>
-            </div>
-            <h4>Technical Skills</h4>
-            <!-- Progress bars / Skills -->
-            <p>Web Designing</p>
-            <div class="w3-grey">
-              <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95%</div>
-            </div>
-            <p>IOS Development</p>
-            <div class="w3-grey">
-              <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">85%</div>
-            </div>
-            <p>Andriod Development</p>
-            <div class="w3-grey">
-              <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">80%</div>
-            </div>
+    function w3_open() {
+      document.getElementById("mySidebar").style.width = "20%";
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
 
-            <!-- JavaScript for sidebar functionality -->
-            <script>
-              function w3_open() {
-                document.getElementById("mySidebar").style.width = "20%";
-                document.getElementById("mySidebar").style.display = "block";
-                document.getElementById("myOverlay").style.display = "block";
-              }
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
 
-              function w3_close() {
-                document.getElementById("mySidebar").style.display = "none";
-                document.getElementById("myOverlay").style.display = "none";
-              }
-            </script>
-
+  </script>
 </body>
 
 </html>
