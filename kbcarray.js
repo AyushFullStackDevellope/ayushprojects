@@ -69,6 +69,7 @@ function displayQuestion() {
     document.getElementById("option-two").innerHTML = g.answers[1];
     document.getElementById("option-three").innerHTML = g.answers[2];
     document.getElementById("option-four").innerHTML = g.answers[3];
+    document.getElementById("text-display").style.color = "white"; // Reset text color
 }
 // question and correct or incorrect options function
 function answer(givenAnswer) {
@@ -80,7 +81,7 @@ function answer(givenAnswer) {
             document.getElementById("text-display").style.color = "green";
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
-                displayQuestion();
+                setTimeout(displayQuestion, 2100); // Delay before showing the next question
             } else {
                 document.getElementById("text-display").innerHTML = "Your bank account has been credited with Rs. 7,00,00,000!";
             }
@@ -88,9 +89,9 @@ function answer(givenAnswer) {
             document.getElementById("text-display").innerHTML = "Better luck next time.";
             document.getElementById("text-display").style.color = "red";
             currentQuestionIndex = 0;
-            // time taken by loader
-            setTimeout(displayQuestion, 2100);
-            // Delay before resetting to the first question
+            setTimeout(displayQuestion, 2100); // Delay before resetting to the first question
         }
     }, 2100);
 }
+
+
