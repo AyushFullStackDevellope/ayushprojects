@@ -4,42 +4,10 @@
 <head>
   <!-- internal styling -->
   <style>
-    .st2 {
-      background-color: #789461;
-      color: #DBE7C9;
-    }
-
-    fieldset {
-      padding: 20px;
-      font-family: 'Gamja Flower', sans-serif;
-      font-family: 'Space Mono', monospace;
-
-    }
-
-    body {
-      background-color: black;
-    }
-
-    .submit {
-      background-color: #96E9C6;
-      width: 20%;
-      height: 30px;
-      padding-right: 25px;
-    }
-
-    h1 {
-      text-align: center;
-      background-color: aqua;
-    }
-
-    legend {
-      background-color: #294B29;
-    }
-
-    .s3 {
-      background-color: #D04848;
-      width: 10%;
-      padding-right: 20px;
+    .data {
+      font-size: 20px;
+      font-weight: bold;
+      color: #000;
     }
   </style>
   <!-- google fonts -->
@@ -54,142 +22,20 @@
         lastName: "Nakade",
       };
 
-      console.log(
-        "STUDENT DETAIL = ",
-        student.firstName,
-        "LAST NAME = ",
-        student.lastName,
-        "ROLL NUMBER = ",
-        student.rollNumber,
 
-      );
-      
-    }
+    };
+
   </script>
 </head>
 
 <body>
   <!-- form -->
-  <form style="background-color:#789461; padding: 20px;">
 
-    <div class="buttons">
-      <button onclick="dataFunction()">Student's Data Entry</button>
-      <button onclick="listFunction()">Student's List</button>
-    </div>
-    <br>
-    <fieldset class="st2">
-      <!-- form heading -->
-      <legend><u>ENJOY PROGRAMMING: Personal Details</u></legend>
-      <!-- timings -->
-      <label for="tm">Prefrred Timings:</label>&emsp;&emsp;&emsp;&emsp;
-      <input type="time" id="tm">&emsp;&emsp;to&emsp;&emsp; <input type="time">
-      <br>
-      <br>
-      <br>
-      <!-- dates -->
-      <label for="dt">Prefrred Batch Date:</label>&emsp;&emsp;&emsp;&emsp;
-      <input type="date" id="dt">&emsp;&emsp;to&emsp;&emsp; <input type="date">
-      <br><br><br>
-      <!-- date of birth -->
-      <label for="dob">Prefrred Batch Date:</label>&emsp;&emsp;&emsp;&emsp;
-      <input type="date" id="dob">
-      <br><br><br>
-      <label for="em">📧 Email:</label>&emsp;&emsp;&emsp;&emsp;
-      <input type="email" id="em">
-      <br><br><br>
-      <label for="ph">📞 Contact No.</label>&emsp;&emsp;&emsp;&emsp;
-      <input type="tel" id="ph" pattern="{0-9} {10}">
-      <br><br><br>
-      <label for="ph">Communication [10]:</label>&emsp;&emsp;&emsp;&emsp;
-      <input type="range" id="ph">
-      <br><br><br>
-      <label for="no">Age:</label>&emsp;&emsp;&emsp;&emsp;
-      <input type="number" id="no" pattern="{1-60}">
-      <br><br><br>
-      <br><br><br>
-      <label for="opt">Pick a Batch:</label>&emsp;&emsp;&emsp;&emsp;
-      <select value="batch" id="opt">
-        <optgroup label="Jr. Batch">
-          <option value="Batch1">Visionary Batch
-          <option value="Batch2">Scholar Batch
-        </optgroup>
-        <optgroup label="Seniour Batch">
-          <option value="Batch3">Adventesious Batch
-          <option value="Batch4">Proficient Batch
-        </optgroup>
-      </select>
-      <br>
-      <br>
-      <textarea id="tar" placeholder="Tell Something About Yourself...." style="height: 74px; width: 500px;"></textarea>
-      <br><br>
-      <!-- buttons -->
-      <a href="./formcompletation.html">
-        <input class="submit" type="button" value="Submit" onclick="inputData()"> </a>
-    </fieldset>
-  </form>
-  <div class="page-two" id="show">
-    <div class="buttons">
-      <button onclick="dataFunction()">Student's Data Entry</button>
-      <button onclick="listFunction()">Student's List</button>
-    </div>
-    <table>
-      <!-- Table Caption -->
-      <caption>
-        <h1>Students' Information</h1>
-      </caption>
-      <tbody class="table-style">
-        <!-- Table Heading -->
-        <tr class="td">
-          <th colspan="2" class="td">Sr. No./Roll No.</th>
-          <th class="td">Student Name</th>
-          <th class="td">Contact Number</th>
-          <th class="td">DOB</th>
-          <th class="td">Education Details</th>
-          <th class="td">Email-Id</th>
-          <th class="td">Address</th>
-        </tr>
-        <!-- first row -->
-        <tr class="td">
-          <td class="tr">1.</td>
-          <td class="tr">001</td>
-          <td class="tr" id="name"></td>
-          <td class="tr" id="contact"></td>
-          <td class="tr" id="date"></td>
-          <td class="tr" id="education"></td>
-          <td class="tr" id="mail">
-            <p class="par1"></p>
-          </td>
-          <td class="tr" id="address"></td>
-        </tr>
-        <!-- 2nd row -->
-        <tr class="td">
-          <td class="tr">2.</td>
-          <td class="tr">002</td>
-          <td class="tr"></td>
-          <td class="tr"></td>
-          <td class="tr"></td>
-          <td class="tr"></td>
-          <td class="tr">
-            <p class="par1"></p>
-          </td>
-          <td class="tr" id=""></td>
-        </tr>
-        <!-- 3rd row -->
-        <tr class="td">
-          <td class="tr">3.</td>
-          <td class="tr">003</td>
-          <td class="tr"></td>
-          <td class="tr"></td>
-          <td class="tr"></td>
-          <td class="tr"></td>
-          <td class="tr">
-            <p class="par1"></p>
-          </td>
-          <td class="tr" id=""></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="buttons">
+    <button onclick="dataFunction()">Student's Data Entry</button>
+
   </div>
+  <div class="data"></div>
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 
 <head>
     <title>EVEN ODD</title>
+    <!-- internal styling -->
     <style>
         .container {
             width: 80vw;
@@ -21,7 +22,7 @@
         }
 
         .display-text {
-            color: white;
+            color: rgb(20, 255, 235);
             font-size: 22px;
         }
 
@@ -35,8 +36,9 @@
             margin-left: 300px;
             font-weight: bold;
             font-size: large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+
 
         #section-one {
             background-color: aqua;
@@ -59,12 +61,17 @@
             border-color: rgb(113, 255, 5);
             border-width: 20px;
             font-size: larger;
-            margin-left: 290px;
+            margin-left: 370px;
             margin-top: 20px;
 
         }
+
+        body {
+            background-color: gray;
+        }
     </style>
     <script>
+        // script function for even odd
         function evenOrOdd() {
             let x = document.getElementById("input-one").value;
             if (x % 2 == 0) {
@@ -73,6 +80,7 @@
                 document.getElementById("display-text").innerHTML = "ODD NUMBER";
             }
         }
+        // function for eligible for vote or not eligible for vote
         function isEligable() {
             let x = document.getElementById("input-one").value;
             if (x >= 18) {
@@ -83,6 +91,7 @@
                     "NOT ELIGABLE TO VOTE";
             }
         }
+        // function for numbers are equal or not equal
         function isEqualTo() {
             let x = document.getElementById("input-one").value;
             let y = document.getElementById("input-two").value;
@@ -96,6 +105,7 @@
         }
     </script>
 </head>
+<!-- html programme and UI -->
 
 <body>
     <div class="display">
@@ -109,7 +119,7 @@
         <button class="box" id="section-one" onclick="isEligable()">
             VOTE
         </button>
-        <button class="box" id="section-two" onclick="evenOrOdd()">EVEN OR ODD</button>
+        <button class="box" id="section-two" onclick="evenOrOdd()">EVEN or ODD</button>
         <button class="box" id="section-three" onclick="isEqualTo()">EQUAL or NOT</button>
     </div>
 </body>
