@@ -78,6 +78,11 @@
             color: #fff;
         }
 
+        .operator-top {
+            background-color: #464646;
+            color: #fff;
+        }
+
         #display {
             background-color: rgb(124, 124, 124);
             color: rgb(255, 255, 255);
@@ -177,9 +182,9 @@
         <!-- calculator  -->
         <div style="height: 100%; width: 100%;">
             <div class="second-box">
-                <div><button onclick="clearFunction()" class="clear">AC</button></div>
-                <div><button onclick="backspace()" class="operator">⇦</button></div>
-                <div><button onclick="per()" class="operator">%</button></div>
+                <div><button onclick="clearFunction()" class="operator-top">AC</button></div>
+                <div><button onclick="backspace()" class="operator-top">⇦</button></div>
+                <div><button onclick="per()" class="operator-top">%</button></div>
                 <div><button onclick="div()" class="operator">/</button></div>
                 <div><button onclick="numberTyped(7)" class="number">7</button></div>
                 <div><button onclick="numberTyped(8)" class="number">8</button></div>
