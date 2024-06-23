@@ -665,10 +665,7 @@ h3.my-profession {
     display: block;
     margin-left: 0;
   }
-  .explore {
-    margin-top: 50px;
-    margin-left: 250px;
-  }
+
 }
 
 @media (max-width: 991px) {
@@ -716,10 +713,7 @@ h3.my-profession {
     height: 50px;
     width: 250px;
   }
-  .explore {
-    margin-top: 50px;
-    margin-left: 300px;
-  }
+
 }
 
 @media (max-width: 767px) {
@@ -747,7 +741,5 @@ h3.my-profession {
     margin-top: 10px;
     font-size: 14px;
   }
-  .explore {
-    margin-bottom: 50px;
-  }
+
 }
