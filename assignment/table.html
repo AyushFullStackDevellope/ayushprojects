@@ -1,98 +1,145 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>EP_Table</title>
-    <!-- internal styling -->
+    <!-- Internal Styling -->
     <style>
+      /* Styling the button */
+      button {
+        margin-top: 20px;
+        height: 5vh;
+        width: 20vw;
+        max-width: 150px;
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        color: aliceblue;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      button:hover {
+        background: linear-gradient(135deg, #2980b9, #3498db);
+        transform: translateY(-2px);
+      }
+
+      /* Styling the display div */
+      #display {
+        height: auto;
+        min-height: 30vh;
+        width: 80vw;
+        max-width: 600px;
+        background-color: rgba(0, 0, 0, 0);
+        color: black;
+        font-size: larger;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 25px;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Body styling with background image */
+      body {
+        background-image: url("https://i.makeagif.com/media/10-22-2020/Pms24f.gif");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        color: azure;
+      }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
         button {
-            margin-top: 100px;
-            margin-left: 640px;
-            height: 5vh;
-            width: 10vw;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: aliceblue;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        button:hover {
-            background: linear-gradient(135deg, #2980b9, #3498db);
-            transform: translateY(-2px);
-        }
-
-
-        #input {
-            margin-left: 400px;
-            height: 30px;
-            width: 300px;
-            background-color: rgb(145, 145, 145);
-            color: azure;
-            margin-top: 5px;
-            font-size: large;
-            cursor: cell;
-        }
-
-        body {
-            background-image: url(https://png.pngtree.com/background/20210710/original/pngtree-math-improve-class---vacation-hand-drawn-chalkboard-background-picture-image_1030625.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 85vh;
-            width: 100vw;
+          width: 30vw;
+          font-size: 20px;
         }
 
         #display {
-            height: 30vh;
-            width: 40vw;
-            color: black;
-            background-color: rgba(52, 149, 201, 0);
-            margin-top: 100px;
-            margin-left: 400px;
-            color: rgb(230, 230, 230);
-            font-size: larger;
-            padding: 20px;
-            animation-name: fadeIn;
-            animation-duration: 1s;
-            text-align: center;
-            font-size: 25px;
+          width: 90vw;
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        button {
+          width: 40vw;
+          font-size: 20px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+        #display {
+          width: 95vw;
+          font-size: 18px;
         }
-        
+      }
+      @media (max-width: 768px) {
+        button {
+          width: 30vw;
+          font-size: 20px;
+        }
+
+        #display {
+          width: 90vw;
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        button {
+          width: 40vw;
+          font-size: 20px;
+        }
+
+        #display {
+          width: 95vw;
+          font-size: 18px;
+        }
+      }
     </style>
-    <!-- script -->
+    <!-- Script -->
     <script>
-        // function for multiplcation table
-        function iterative() {
-            let table = Number(prompt("Select a number for the multiplication table"));
-            let result = "";
-            let x = 1;
-            while (x <= 10) {
-                result += `${table} × ${x} = ${table * x}<br>`;
-                x++;
-            }
-            document.getElementById("display").innerHTML = result;
+      // Function for multiplication table
+      function iterative() {
+        let table = Number(
+          prompt("Select a number for the multiplication table")
+        );
+        let result = "";
+        let x = 1;
+        while (x <= 10) {
+          result += `${table} × ${x} = ${table * x}<br>`;
+          x++;
         }
+        document.getElementById("display").innerHTML = result;
+      }
     </script>
-</head>
-<!-- body -->
+  </head>
 
-<body>
-    <!-- input button display -->
+  <!-- Body -->
+  <body>
+    <!-- Display area for the multiplication table -->
     <div id="display"></div>
-    <br>
+    <br />
+    <!-- Button to trigger the multiplication table generation -->
     <button onclick="iterative()">Try Now !!</button>
-</body>
-
+  </body>
 </html>
