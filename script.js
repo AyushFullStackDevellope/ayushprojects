@@ -83,3 +83,20 @@ function asideSectionTogglerBtn() {
      target.classList.add("active");
    });
  });
+
+ function copyEmail() {
+  const email = 'ayushnakade**@example.com';
+  navigator.clipboard.writeText(email).then(() => {
+      alert('Email copied to clipboard');
+  }).catch(err => {
+      console.error('Failed to copy email: ', err);
+  });
+}
+ function copySkype() {
+  const skype = 'live:.cid.6b52ae3d6f119f96';
+  navigator.clipboard.writeText(skype).then(() => {
+      alert('Skype ID copied to clipboard');
+  }).catch(err => {
+      console.error('Failed to copy Skype ID: ', err);
+  });
+}
