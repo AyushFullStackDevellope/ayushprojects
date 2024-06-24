@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>enjoyprogramming.registration</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://scontent.fnag12-1.fna.fbcdn.net/v/t39.30808-1/428666087_122132408708048340_3787509526926870149_n.jpg?stp=dst-jpg_p480x480&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Ysnvn99NrIMQ7kNvgHLlbV0&_nc_ht=scontent.fnag12-1.fna&oh=00_AYDi0O_ae93wA2CmJTsG59bLvY9LuJ8ii26C8f97dQBtkg&oe=6667B794"
+    />
 
-<head>
-  <title>enjoyprogramming.registration</title>
-  <link rel="icon" type="image/x-icon" href="https://scontent.fnag12-1.fna.fbcdn.net/v/t39.30808-1/428666087_122132408708048340_3787509526926870149_n.jpg?stp=dst-jpg_p480x480&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Ysnvn99NrIMQ7kNvgHLlbV0&_nc_ht=scontent.fnag12-1.fna&oh=00_AYDi0O_ae93wA2CmJTsG59bLvY9LuJ8ii26C8f97dQBtkg&oe=6667B794">
-
-
-  <!-- internal styling -->
-  <style>
-    /* background image */
-    body {
+    <!-- internal styling -->
+    <style>
+      /* Global styles */
+      body {
       background-image: url("./assets/enjoy_logo.jpg");
       background-attachment: fixed;
       background-repeat: no-repeat;
@@ -53,37 +55,82 @@
       text-decoration: none;
       outline: none;
     }
+      /* button hover effect */
+      .button:hover {
+        background-color: #75d9b0;
+        transform: scale(1.05);
+      }
 
-    /* button hover effect */
-    .button:hover {
-      background-color: #75d9b0;
-      transform: scale(1.05);
-    }
-  </style>
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        body {
+          margin-top: 50px;
+          background-size: 500px;
+        }
 
-</head>
+        h1 {
+          margin-left: auto;
+          margin-right: auto;
+        }
 
-<body>
-  <div>
-    <!-- header -->
-    <h1>WELC⭕ME!!</h1>
-    <!-- form -->
-    <form action="formdetails.html">
-      <!-- sign in content -->
-      <p class="st1">By creating an account you agree to our <a
-          href="https://www.linkedin.com/in/enjoy-programming-43606b290/?originalSubdomain=in"
-          style="color:dodgerblue">🔏 Terms & Privacy</a>.</p>
+        .st1 {
+          text-align: center;
+          margin: 20px;
+        }
 
-      <div class="st1">
-        <!-- button -->
-        <a href="./login.html">
-          <button class="button" type="button" class="cancelbtn">Sign in</button></a>
-        &emsp;&emsp;OR&emsp;&emsp;
-        <a href="./formdetails.html">
-          <button class="button" type="submit" class="signupbtn">Create New</button></a>
-      </div>
+        .button {
+          margin: 10px 0;
+        }
+      }
 
-    </form>
-</body>
+      @media (max-width: 480px) {
+        body {
+          margin-top: 20px;
+          background-size: 300px;
+        }
 
+        .st1 {
+          margin: 10px;
+        }
+
+        .button {
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <!-- header -->
+      <h1>WELC⭕ME!!</h1>
+      <!-- form -->
+      <form action="formdetails.html">
+        <!-- sign in content -->
+        <p class="st1">
+          By creating an account you agree to our
+          <a
+            href="https://www.linkedin.com/in/enjoy-programming-43606b290/?originalSubdomain=in"
+            style="color: dodgerblue"
+            >🔏 Terms & Privacy</a
+          >.
+        </p>
+
+        <div class="st1">
+          <!-- button -->
+          <a href="./login.html">
+            <button class="button" type="button" class="cancelbtn">
+              Sign in
+            </button></a
+          >
+          &emsp;&emsp;OR&emsp;&emsp;
+          <a href="./formdetails.html">
+            <button class="button" type="submit" class="signupbtn">
+              Create New
+            </button></a
+          >
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
